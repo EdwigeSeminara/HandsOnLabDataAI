@@ -12,9 +12,7 @@ We will use Azure Machine Learning Studio to create a model that can detect anom
 
 Then we will simulate new data from that power plant and see what's happenning on a Power BI report.
 
-* Go to https://studio.azureml.net/- automatic!
-[Azure](https://studio.azureml.net/)
+* Go to https://studio.azureml.net/
 * Create a free account or sign in
 * Click New, Dataset
-![Image 1](/images/1.jpg)
-Format: ![Alt Text](url)
+/images/1.jpg
