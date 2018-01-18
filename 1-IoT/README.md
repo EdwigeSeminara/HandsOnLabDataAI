@@ -107,14 +107,15 @@ First of all, check that you have
 * We now should rename the output column to make it easier to use.
 * Add an Execute Python Script and paste the following code
 
-`<
+``` python
 import pandas as pd 
+
 def azureml_main(frame): 
 	l = frame.columns.tolist() 
 	l[0] = "Proba" 
 	frame.columns = l 
 	return frame,
->`
+```
 
 ![image 23](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/23.JPG)
 
