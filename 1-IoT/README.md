@@ -15,4 +15,5 @@ Then we will simulate new data from that power plant and see what's happenning o
 * Go to https://studio.azureml.net/
 * Create a free account or sign in
 * Click New, Dataset
-* ![image 1](/images/1.jpg)
+
+![image 1](/images/1.jpg)
