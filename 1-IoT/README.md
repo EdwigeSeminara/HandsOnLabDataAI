@@ -1,6 +1,6 @@
-AZURE RED SHIRT DEV TOUR
+<h1> AZURE RED SHIRT DEV TOUR
 
-Hands On Lab Cognitive Services & AI
+<h2> Hands On Lab Cognitive Services & AI
 
 
 1-	IOT
@@ -11,3 +11,10 @@ Features consist of hourly average ambient variables Temperature (T), Ambient Pr
 We will use Azure Machine Learning Studio to create a model that can detect anomalies in that power plant data.
 
 Then we will simulate new data from that power plant and see what's happenning on a Power BI report.
+
+* Go to https://studio.azureml.net/- automatic!
+[Azure](https://studio.azureml.net/)
+* Create a free account or sign in
+* Click New, Dataset
+![Image 1](/images/1.jpg)
+Format: ![Alt Text](url)
