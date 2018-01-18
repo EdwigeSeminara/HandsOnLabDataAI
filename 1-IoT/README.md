@@ -94,12 +94,9 @@ First of all, check that you have
 
 * Click on Set Up Web Service, Predictive Web Service
 
-![image 20](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/20.JPG)
-
-* Run the predictive experiment
-
 ![image 21](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/21.JPG)
 
+* Run the predictive experiment
 * Check the input and the output. None of them is valid.
 * Put the Web Service Input AFTER the transformation
 * Add a Select Column in Dataset and keep only the Scored Probabilities column at the end. This is the only thing we want.
@@ -185,7 +182,7 @@ def azureml_main(frame):
 ![image 40](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/40.JPG)
 ![image 41](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/41.JPG)
 
-* Add an output to your PowerBi Account (you can create a free one) to visualize your data in real time
+* Add an output to your PowerBi Account to visualize your data in real time
 
 ![image 42](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/42.JPG)
 ![image 43](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/43.JPG)
@@ -272,5 +269,7 @@ if __name__ == '__main__':
 ```
 
 * And launch it
-* It will send continuously values similar to what the plant is supposed to send but with some errors because it’s not exactly the same.
+
+###### It will send continuously values similar to what the plant is supposed to send but with some errors because it’s not exactly the same.
+
 * Let it turn and go to Power BI
