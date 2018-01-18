@@ -117,21 +117,21 @@ def azureml_main(frame):
 	return frame,
 ```
 
-![image 23](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/23.JPG)
+![image 24](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/24.JPG)
 
 * Run it. You should have a perfect output.
 
-![image 24](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/24.JPG)
+![image 25](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/25.JPG)
 
 * Click on Deploy Web Service
 
-![image 25](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/25.JPG)
+![image 26](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/26.JPG)
 
 ### You now have access to your model throw an API which takes 5 floats as input and output a 0-1 probability
 
 * Click on the link Excel 2013 or later
 
-![image 26](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/26.JPG)
+![image 27](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/27.JPG)
 
 * Open the file
 * Click on Activate Modifications
@@ -139,34 +139,34 @@ def azureml_main(frame):
 * Click on HOL[predictive experiment]
 * Check the Schema first
 
-![image 27](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/27.JPG)
+![image 29](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/29.JPG)
 
 * Click on use sample data
 
-![image 28](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/28.JPG)
+![image 30](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/30.JPG)
 
 * Select the entire created table as input and F1 as output
 
-![image 29](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/29.JPG)
+![image 31](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/31.JPG)
 
 * Click predict
 * You can modify values and click predict again to test your model
 
-![image 30](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/30.JPG)
-![image 31](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/31.JPG)
 ![image 32](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/32.JPG)
+![image 33](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/33.JPG)
+![image 34](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/34.JPG)
 
 ### We want to use it on streaming data to determine in real time if there are anomalies in our plant.
 * Go to https://portal.azure.com and sign in using your account or create a free one.
 * Create a new Resource Group
 
-![image 33](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/33.JPG)
+![image 35](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/35.JPG)
 
 * Add a Storage Account, an Azure Stream Analytics and an Event Hubs
 
-![image 34](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/34.JPG)
-![image 35](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/35.JPG)
 ![image 36](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/36.JPG)
+![image 37](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/37.JPG)
+![image 38](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/38.JPG)
 
 * Go back to your Resource Group
 * Open the newly created Event Hubs and click on add an Event Hub, call it datatostream
@@ -174,7 +174,7 @@ def azureml_main(frame):
 * Open your newly created Storage Account and open Blob Objects
 * Add a new Container
 
-![image 37](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/37.JPG)
+![image 39](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/39.JPG)
 
 * Go back to your Resource Group
 * Open your Stream Analytics
@@ -182,23 +182,23 @@ def azureml_main(frame):
 * Go back to your Stream Analytics
 * Click on output and add an output to your Blob Storage to archive outputs
 
-![image 38](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/38.JPG)
-![image 39](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/39.JPG)
+![image 40](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/40.JPG)
+![image 41](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/41.JPG)
 
 * Add an output to your PowerBi Account (you can create a free one) to visualize your data in real time
 
-![image 40](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/40.JPG)
-![image 41](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/41.JPG)
+![image 42](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/42.JPG)
+![image 43](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/43.JPG)
 
 * Go back to your Stream Analytics
 * Click on Functions
 * Add a new function connected to your predictive API
 
-![image 42](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/42.JPG)
+![image 44](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/44.JPG)
 
 * You can find your key there
 
-![image 43](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/43.JPG)
+![image 45](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/45.JPG)
 
 * And the URL by clicking on REQUEST/RESPONSE and by copying the POST URL
 * Go back to your Stream Analytics
