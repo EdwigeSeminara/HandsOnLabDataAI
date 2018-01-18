@@ -120,3 +120,157 @@ def azureml_main(frame):
 ![image 23](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/23.JPG)
 
 * Run it. You should have a perfect output.
+
+![image 24](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/24.JPG)
+
+* Click on Deploy Web Service
+
+![image 25](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/25.JPG)
+
+### You now have access to your model throw an API which takes 5 floats as input and output a 0-1 probability
+
+* Click on the link Excel 2013 or later
+
+![image 26](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/26.JPG)
+
+* Open the file
+* Click on Activate Modifications
+* You are now able to test your model throw Excel
+* Click on HOL[predictive experiment]
+* Check the Schema first
+
+![image 27](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/27.JPG)
+
+* Click on use sample data
+
+![image 28](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/28.JPG)
+
+* Select the entire created table as input and F1 as output
+
+![image 29](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/29.JPG)
+
+* Click predict
+* You can modify values and click predict again to test your model
+
+![image 30](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/30.JPG)
+![image 31](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/31.JPG)
+![image 32](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/32.JPG)
+
+### We want to use it on streaming data to determine in real time if there are anomalies in our plant.
+* Go to https://portal.azure.com and sign in using your account or create a free one.
+* Create a new Resource Group
+
+![image 33](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/33.JPG)
+
+* Add a Storage Account, an Azure Stream Analytics and an Event Hubs
+
+![image 34](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/34.JPG)
+![image 35](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/35.JPG)
+![image 36](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/36.JPG)
+
+* Go back to your Resource Group
+* Open the newly created Event Hubs and click on add an Event Hub, call it datatostream
+* Go back to your Resource Group
+* Open your newly created Storage Account and open Blob Objects
+* Add a new Container
+
+![image 37](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/37.JPG)
+
+* Go back to your Resource Group
+* Open your Stream Analytics
+* Click on input and add an input from your Event Hub
+* Go back to your Stream Analytics
+* Click on output and add an output to your Blob Storage to archive outputs
+
+![image 38](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/38.JPG)
+![image 39](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/39.JPG)
+
+* Add an output to your PowerBi Account (you can create a free one) to visualize your data in real time
+
+![image 40](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/40.JPG)
+![image 41](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/41.JPG)
+
+* Go back to your Stream Analytics
+* Click on Functions
+* Add a new function connected to your predictive API
+
+![image 42](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/42.JPG)
+
+* You can find your key there
+
+![image 43](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/43.JPG)
+
+* And the URL by clicking on REQUEST/RESPONSE and by copying the POST URL
+* Go back to your Stream Analytics
+* Click on Request
+* Add the following request
+
+``` sql
+WITH anomaly AS ( 
+	SELECT cast(T as float) as T, 
+	cast(V as float) as V, 
+	cast(AP as float) as AP, 
+	cast(RH as float) as RH, 
+	cast(PE as float) as PE, 
+	cast(anomaly(T, V, AP, RH, PE) as float) as result from holBlobIn 
+	) 
+
+Select System.Timestamp as date, 'Paris' as location, T, V, AP, RH, PE, result * 100 as result 
+Into holBlobOut 
+From anomaly 
+
+Select System.Timestamp as date, T, V, AP, RH, PE, result 
+Into holPbiOut 
+From anomaly
+```
+* Now save it
+* And launch your streaming task
+* Nothing is now happening because our Event Hub does not receive anything
+* Open any Python IDE
+* Copy the following code
+
+``` python
+import json
+import random
+from datetime import datetime
+from azure.servicebus import ServiceBusService
+
+def rd(mu, sigma):
+    return abs(round(random.normalvariate(mu, sigma), 2))
+
+def main():
+    sbs = ServiceBusService(service_namespace='holEvents',
+                            shared_access_key_name='RootManageSharedAccessKey',
+                            shared_access_key_value='ugV/8wxg/Z0ZoTWBZWRUP5j2cgaEDiJC26ZLuoshotY=')
+    turn = 0
+    while turn >= 0:
+        t = rd(19.6, 67.6)
+        ap = rd(1002.6, 101.1)
+        rh = rd(54, 13.6)
+        v = rd(83.5, 99.1)
+        pe = rd(445.6, 61.1)
+
+        now = datetime.now().strftime("%M")
+
+        if turn == 0:
+            time = now
+        else:
+            if now != time:
+
+                data = {"T":str(t), "V":str(v), "AP":str(ap), "RH":str(rh), "PE":str(pe)}
+
+                body = str.encode(json.dumps(data))
+                print(body)
+                sbs.send_event('datatostream', body)
+
+                time = now
+
+        turn += 1
+
+if __name__ == '__main__':
+    main()
+```
+
+* And launch it
+* It will send continuously values similar to what the plant is supposed to send but with some errors because it’s not exactly the same.
+* Let it turn and go to Power BI
