@@ -18,31 +18,28 @@ First of all, check that you have
 
 ## Ready ?
 
+#### We first need to train a model, we will use Azure Machine Learning Studio for that 
+
 * Go to https://studio.azureml.net/
 * Create a free account or sign in
 * Click New, Dataset
 
 ![image 1](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/1.JPG)
 
-* Add the dataset “folds.csv”
-
-![image 2](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/2.JPG)
-
+* Add the dataset “folds.csv” as a Generic CSV File with a header (.csv)
 * Click New again
-* Create a new Experiment
+* Create a new Experiment by clicking Blank Experiment
 
 ![image 3](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/3.JPG)
 
 * Rename your new experiment
-* Add to this experiment your newly added dataset
-![image 5](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/5.JPG)
-
-* Click on Visualize
+* Add to this experiment your newly added dataset by clicking on the left pane under Saved Datasets/My Datasets
+* Right Click on the bottom of the card then click Visualize
 
 ![image 6](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/6.JPG)
 
 * We have 2 useless columns to remove
-* Add a Select Column in Dataset
+* Search on the left pane and add a Select Column in Dataset
 
 ![image 7](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/7.JPG)
 
@@ -50,7 +47,7 @@ First of all, check that you have
 
 ![image 8](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/8.JPG)
 
-* Run
+* Run your experiment
 
 ![image 9](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/9.JPG)
 
