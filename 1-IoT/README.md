@@ -18,58 +18,58 @@ First of all, check that you have
 
 ## Ready ?
 
+#### We first need to train a model, we will use Azure Machine Learning Studio for that 
+
 * Go to https://studio.azureml.net/
 * Create a free account or sign in
 * Click New, Dataset
 
 ![image 1](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/1.JPG)
 
-* Add the dataset “folds.csv”
-
-![image 2](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/2.JPG)
-
+* Add the dataset “folds.csv” as a Generic CSV File with a header (.csv)
 * Click New again
-* Create a new Experiment
+* Create a new Experiment by clicking Blank Experiment
 
 ![image 3](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/3.JPG)
 
 * Rename your new experiment
-* Add to this experiment your newly added dataset
-![image 5](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/5.JPG)
-
-* Click on Visualize
+* Add to this experiment your newly added dataset by clicking on the left pane under Saved Datasets/My Datasets
+* Right Click on the bottom of the card then click Visualize
 
 ![image 6](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/6.JPG)
 
 * We have 2 useless columns to remove
-* Add a Select Column in Dataset
+* Search on the left pane and add a Select Column in Dataset
 
 ![image 7](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/7.JPG)
 
-* Remove Column 0 and Column 6
+* Remove Column 0 and Column 6 by using the Column Selector in the right pane.
 
 ![image 8](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/8.JPG)
 
-* Run
+* Run your experiment
 
 ![image 9](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/9.JPG)
 
 * Visualize. You have kind of a good dataset.
 * But we have some missing values. Our algorithm will ignore the entire line and predict nothing here…
-* Add a Clean Missing Data with 0 for the replacement value
+* Add a Clean Missing Data with 0 for the replacement value.
 
 ![image 11](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/11.JPG)
 ![image 12](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/12.JPG)
 
 * To train then test our algorithm we need to split our data
-* Add a Split Data
+* Add a Split Data and attribute 80% of the rows for training.
 
 ![image 13](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/13.JPG)
 ![image 14](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/14.JPG)
 
 * We want to detect anomalies on future data using the dataset we have.
-* We are going to use an algorithm called One-Class Support Vector Machine (https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/one-class-support-vector-machine) which enables unsupervised training on a dataset with few anomalies.
-* Add it to the flow
+* We are going to use an algorithm called One-Class Support Vector Machine (https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/one-class-support-vector-machine) which enables unsupervised learning on a dataset with few anomalies.
+* Add it to the flow and make parameters as follow :
+	* Create Trainer Mode : Single parameter
+	* ƞ : 0.1
+	* ɛ : 0.05
 
 ![image 15](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/15.JPG)
 
@@ -92,7 +92,7 @@ First of all, check that you have
 ### We have a model which is able to detect anomaly risk in a dataset
 ### We now need to use this model outside of Azure ML
 
-* Click on Set Up Web Service, Predictive Web Service
+* Click on Set Up Web Service/Predictive Web Service
 
 ![image 21](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/21.JPG)
 
@@ -124,16 +124,16 @@ def azureml_main(frame):
 
 ![image 26](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/26.JPG)
 
-### You now have access to your model throw an API which takes 5 floats as input and output a 0-1 probability
+### You now have access to this model throw an API which takes 5 floats as input and output one float : a 0-1 probability
 
-* Click on the link Excel 2013 or later
+* In the opened window click on the link Excel 2013 or later
 
 ![image 27](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/27.JPG)
 
 * Open the file
 * Click on Activate Modifications
 * You are now able to test your model throw Excel
-* Click on HOL[predictive experiment]
+* On the right pane in Excel, click on HOL[predictive experiment]
 * Check the Schema first
 
 ![image 29](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/29.JPG)
@@ -154,12 +154,16 @@ def azureml_main(frame):
 ![image 34](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/34.JPG)
 
 ### We want to use it on streaming data to determine in real time if there are anomalies in our plant.
+
+#### we will use Azure resources to make that streaming flow
+
 * Go to https://portal.azure.com and sign in using your account or create a free one.
 * Create a new Resource Group
 
 ![image 35](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/35.JPG)
 
-* Add a Storage Account, an Azure Stream Analytics and an Event Hubs
+* Click on Add on the top to add new resources
+* Add a Storage Account, an Azure Stream Analytics and an Event Hubs just as follow, in that order
 
 ![image 36](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/36.JPG)
 ![image 37](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/37.JPG)
@@ -182,7 +186,7 @@ def azureml_main(frame):
 ![image 40](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/40.JPG)
 ![image 41](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/41.JPG)
 
-* Add an output to your PowerBi Account to visualize your data in real time
+* Also add an output to your PowerBi Account to visualize your data in real time
 
 ![image 42](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/42.JPG)
 ![image 43](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/1-IoT/images/43.JPG)
@@ -270,6 +274,6 @@ if __name__ == '__main__':
 
 * And launch it
 
-###### It will send continuously values similar to what the plant is supposed to send but with some errors because it’s not exactly the same.
+#### It will send continuously values similar to what the plant is supposed to send but with some errors because it’s not exactly the same.
 
-* Let it turn and go to Power BI
+* Let it turns and go to Power BI
