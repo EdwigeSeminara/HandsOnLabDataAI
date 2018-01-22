@@ -4,14 +4,15 @@ import operator
 import requests
 import numpy as np
 import datetime
+import httplib, urllib, base64
 
 # local modules
 from video import create_capture
 from common import clock, draw_str
 
 wait_seconds = 5
-_url = 'https://api.projectoxford.ai/vision/v1.0/describe?maxCandidates=1'
-_key = 'e721e9eb5d754f14a173b90a038bfea7' #Here you have to paste your primary key''
+
+_key = 'XXXXX' #Here you have to paste your primary key''
 _maxNumRetries = 10
 
 
@@ -31,7 +32,7 @@ def draw_rects(img, rects, color):
 
 def timer_ok(timer, json, data, headers, params):
 	if (datetime.datetime.today() - timer).total_seconds() > wait_seconds:
-		print 'ok'
+		print('ok')
 		print timer
 		
 		result = processRequest( json, data, headers, params )
@@ -43,52 +44,19 @@ def timer_ok(timer, json, data, headers, params):
 	else :
 		return timer
 	
+
 def processRequest( json, data, headers, params ):
 
-    """
-    Helper function to process the request to Project Oxford
+	try:
+		conn = httplib.HTTPSConnection('westeurope.api.cognitive.microsoft.com')
+		conn.request("POST", "/face/v1.0/detect?%s" % params, data, headers)
+		response = conn.getresponse()
+		data = response.read()
+		print(data)
+		conn.close()
+	except Exception as e:
+		print("[Errno {0}] {1}".format(e.errno, e.strerror))
 
-    Parameters:
-    json: Used when processing images from its URL. See API Documentation
-    data: Used when processing image read from disk. See API Documentation
-    headers: Used to pass the key information and the data type request
-    """
-
-    retries = 0
-    result = None
-
-    while True:
-
-        response = requests.request( 'post', _url, json = json, data = data, headers = headers, params = params )
-
-        if response.status_code == 429: 
-
-            print( "Message: %s" % ( response.json()['error']['message'] ) )
-
-            if retries <= _maxNumRetries: 
-                time.sleep(1) 
-                retries += 1
-                continue
-            else: 
-                print( 'Error: failed after retrying!' )
-                break
-
-        elif response.status_code == 200 or response.status_code == 201:
-
-            if 'content-length' in response.headers and int(response.headers['content-length']) == 0: 
-                result = None 
-            elif 'content-type' in response.headers and isinstance(response.headers['content-type'], str): 
-                if 'application/json' in response.headers['content-type'].lower(): 
-                    result = response.json() if response.content else None 
-                elif 'image' in response.headers['content-type'].lower(): 
-                    result = response.content
-        else:
-            print( "Error code: %d" % ( response.status_code ) )
-            #print( "Message: %s" % ( response.json()['error']['message'] ) )
-
-        break
-        
-    return result
 	
 if __name__ == '__main__':
 	import sys, getopt
@@ -102,7 +70,12 @@ if __name__ == '__main__':
 	args = dict(args)
 	
 	# Computer Vision parameters
-	params = { 'visualFeatures' : 'Color,Categories'} 
+	params = urllib.urlencode({
+	# Request parameters
+	'returnFaceId': 'true',
+	'returnFaceLandmarks': 'false',
+	'returnFaceAttributes': 'age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise',
+	})
 
 	headers = dict()
 	headers['Ocp-Apim-Subscription-Key'] = _key

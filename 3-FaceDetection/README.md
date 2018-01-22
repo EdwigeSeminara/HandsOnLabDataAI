@@ -16,6 +16,12 @@ Python.exe -m pip install numpy
 ```
 5. Go on the portal Azure to create the Cognitive Services Account :
 - url : http://portal.azure.com
-- Click on "More services" puis rechercher "cognitive services"
-- Click sur + Add puis rechercher "Face API" et cliquer sur "Create"
-- Set the name of the account, select the princing F0 (free), select the ressource group and click on Create
+- Click on "More services" and search "cognitive services"
+- Click sur "+ Add" and search "Face API" and click on "Create"
+- Set the name of the account, select the princing F0 (free), select the ressource group and click on "Create"
+- When the setup of the ressource is finished, go grab your API Key and copy/past it in the variable _key of the FaceDetection.py script
+
+6. Now you can run FaceDetection.py, open a CMD console, go into the 3-FaceDetection\ folder and run :
+```
+C:\Python27\python.exe FaceDetection.py
+```
