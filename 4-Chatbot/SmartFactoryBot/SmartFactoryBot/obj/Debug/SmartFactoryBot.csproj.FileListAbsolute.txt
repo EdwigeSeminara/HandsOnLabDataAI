@@ -1,0 +1,53 @@
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Bot Application.dll.config
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Bot Application.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Bot Application.pdb
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Autofac.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Chronic.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Builder.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Connector.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Logging.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Newtonsoft.Json.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Net.Http.Formatting.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Web.Http.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Web.Http.WebHost.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Autofac.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Builder.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Bot.Connector.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Logging.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.Rest.ClientRuntime.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\Newtonsoft.Json.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Net.Http.Formatting.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Web.Http.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\System.Web.Http.WebHost.xml
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\obj\Debug\SmartFactoryBot.csprojResolveAssemblyReference.cache
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\obj\Debug\SmartFactoryBot.csproj.CoreCompileInputs.cache
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\obj\Debug\Bot Application.dll
+C:\Dev\RedShirtTour\HandsOnLabDataAI\4-Chatbot\SmartFactoryBot\SmartFactoryBot\obj\Debug\Bot Application.pdb
