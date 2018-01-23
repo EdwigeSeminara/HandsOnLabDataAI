@@ -257,8 +257,11 @@ protected static ValidateResult CheckpointVerificationProcess(Checklist state, o
 Compile, run and test the bot with the emulator!
 
 Here is the result you should get:
+
 ![result_1](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/result_1.png)
+
 ![result_2](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/result_2.png)
+
 ![result_3](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/result_3.png)
 
 ## Congratulations you finished this part !
