@@ -36,7 +36,7 @@ To get started, make sure that the initial solution is properly launched in your
 9. The bot answers by welcoming you and asking for your technician id
 
 10. Enter your technician id. The bot displays the message **Thank you! Checklist verified.** :
-![debugresult](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/debugresult.PNG)
+![debugresult](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/debugresult.png)
 
 We will complete the code to build the requested scenario.
 
