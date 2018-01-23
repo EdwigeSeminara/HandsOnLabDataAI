@@ -21,7 +21,7 @@ To get started, make sure that the initial solution is properly launched in your
 1. Open the **HolDataAI.Application.sln** solution
 2. Run the project
 3. An internet page is launched in your browser, note the port indicated in the url:
-![localhosturl](README_files/localhosturl.png)
+![localhosturl](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/localhosturl.PNG)
 
 4. To interact with the bot we need an emulator. Launch Bot Framework Channel Emulator (if you have not installed it, download it **[here](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.35)** and install it)
 
@@ -36,7 +36,7 @@ To get started, make sure that the initial solution is properly launched in your
 9. The bot answers by welcoming you and asking for your technician id
 
 10. Enter your technician id. The bot displays the message **Thank you! Checklist verified.** :
-![debugresult](README_files/debugresult.png)
+![debugresult](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/debugresult.PNG)
 
 We will complete the code to build the requested scenario.
 
