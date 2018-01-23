@@ -17,7 +17,7 @@ namespace SmartFactoryBot
         "Please try again",
         "My apologies, I didn't understand \"{0}\".",
         "I don't understand \"{0}\".",
-        "Excuse me but Im' a chatbot and don't know \"{0}\".",
+        "Excuse me but I'm a chatbot and don't know \"{0}\".",
         "Try again, I don't get \"{0}\".")]
     public class Checklist
     {

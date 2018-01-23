@@ -47,12 +47,12 @@ namespace SmartFactoryBot
         internal static IDialog<Checklist> MakeRootDialog()
         {
             return Chain.From(() => FormDialog.FromForm(Checklist.BuildForm))
-            .Do(async (context, order) =>
+            .Do(async (context, checklist) =>
             {
                 try
                 {
-                    var completed = await order;
-                    // Actually process the coffee order...
+                    var completed = await checklist;
+                    // Actually process checklist...
                     await context.PostAsync("Checklist verified !");
                 }
                 catch (FormCanceledException<Checklist> e)

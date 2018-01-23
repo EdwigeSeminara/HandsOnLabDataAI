@@ -39,7 +39,7 @@ Our goal is to code a bot to roll out a checklist, with differente steps.
 
 Add the necessary to extend the functionality of this bot to the scenario below:
 
-### Discover the source code
+### Explore the source code
 
 All of our changes will be made in the Checklist.cs file, open this file. Note the presence of the Checklist class.
 
@@ -64,12 +64,106 @@ Now let's go!
 
 ### Add enums
 
+In the file named **Checklist.cs** (**outside** the Checklist class) :
+* Add an enum to handle the machine type:
 ```csharp
+        public enum MachineTypeOptions
+        {
+            [Display(Name = "Type 1")]
+            Type1,
+            [Display(Name = "Type 2")]
+            Type2,
+            [Display(Name = "Type 3")]
+            Type3,
+            [Display(Name = "Type 4")]
+            Type4
+        };
 ```
+
+* Add an enum to define the checkpoint verification:
+```csharp
+        public enum CheckpointVerificationOptions
+        {
+            OK,
+            KO
+        };
+```
+
+* Add an enum to specitify other remarks about the machine health:
+```csharp
+        public enum OtherRemarksOptions
+        {
+            Yes,
+            No
+        };
+```
+
+Now let's add the properties!
 
 ### Add properties
 
+In the **Checklist.cs** file (**inside** the Checklist class) :
+
+* Add a property for the machine id:
+```csharp
+	[Prompt("Enter the serial number of the machine")]
+        [Pattern(@"[0-9]")]
+        public string MachineId { get; set; }
+```
+
+* Add a property to handle the machine type:
+```csharp
+       [Prompt("Please specify the machine type {||}")]
+       public MachineTypeOptions? MachineType;
+```
+
+* Add a property to specifiy the first checkpoint health:
+```csharp
+       [Prompt("Please check the first checkpoint of the machine and enter your result {||}")]
+       public CheckpointVerificationOptions? FirstCheckpoint;
+```
+
+* Add a property to ask the second checkpoint health:
+```csharp        
+	[Prompt("Please check the second checkpoint of the machine and enter your result {||}")]
+        public CheckpointVerificationOptions? SecondCheckpoint;
+```
+
+* Add a property to check the third checkpoint health:
+```csharp
+        [Prompt("Please check the third checkpoint of the machine and enter your result {||}")]
+        public CheckpointVerificationOptions? ThirdCheckpoint;
+```
+
+* Add a property to enable the user to enter additional remarks about the machine health:
+```csharp
+        [Optional]
+        [Prompt("Do you see something wrong on the machine which can help for the future ? {||}")]
+        [Template(TemplateUsage.NoPreference, "Skip this step")]
+        public OtherRemarksOptions? OtherRemarks;
+```
+
+* Decore the technician id property this way:
+```csharp
+	[Prompt("Enter your technican id")]
+        [Pattern(@"[0-9]")]
+        public string TechnicianId { get; set; }
+```
+
+What you must remember :
+
+* the **Prompt** attribute defines the sentence used by the bot to query the user
+* the **Optional** attribute makes a question optional and gives the ability to skip the current step
+* the **Pattern** attribute defines the expected response format
+* the **Template** attribute lets you specify the template used for a property
+
+Let's change the form now to get to our scenario!
+
 ### Modify the form
+
+In the Checklist class, go to the BuildForm method, after the line **.Message("Hello, my name is Chuck the checkbot !")**:
+
+
 
 ## Congratulations you finished this part !
 
