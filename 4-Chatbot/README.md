@@ -23,7 +23,7 @@ To get started, make sure that the initial solution is properly launched in your
 ![localhosturl](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/localhosturl.PNG)
 
 4. To interact with the bot we need an emulator. Launch Bot Framework Channel Emulator (if you have not installed it, download it **[here](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.35)** and install it)
-5. In the "Bot Url" field, write the port that you noted in step 3
+5. In the "**Bot Url**" field, write the port that you noted in step 3
 6. Do not change the other fields
 7. In the text box at the bottom of the emulator, enter **hello**
 8. Your **hello** appears in the chat area
@@ -37,7 +37,13 @@ We will complete the code to build the requested scenario.
 
 Our goal is to code a bot to roll out a checklist, with differente steps.
 
-Add the necessary to extend the functionality of this bot to the scenario below:
+Add all required items to extend the functionality of this bot to the scenario below:
+1. Specify the machine id
+2. Specify the machine type
+3. Enter the state of the 3 main checkpoints of the machine (ok / ko)
+4. Ask the user for another remark
+5. Ask if the problem is solved
+6. Thank the user for his intervention
 
 ### Explore the source code
 
