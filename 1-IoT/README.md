@@ -216,11 +216,11 @@ WITH anomaly AS (
 	cast(anomaly(T, V, AP, RH, PE) as float) as result from holBlobIn 
 	) 
 
-Select System.Timestamp as date, 'Paris' as location, T, V, AP, RH, PE, result * 100 as result 
+Select System.Timestamp as date, 'Paris' as location, T, V, AP, RH, PE, (result * 100) as result 
 Into holBlobOut 
 From anomaly 
 
-Select System.Timestamp as date, T, V, AP, RH, PE, result 
+Select System.Timestamp as date, 'Paris' as location, T, V, AP, RH, PE, (result * 100) as result 
 Into holPbiOut 
 From anomaly
 ```
