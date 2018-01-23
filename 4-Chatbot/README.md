@@ -161,9 +161,102 @@ Let's change the form now to get to our scenario!
 
 ### Modify the form
 
-In the Checklist class, go to the BuildForm method, after the line **.Message("Hello, my name is Chuck the checkbot !")**:
+In the Checklist class, go to the BuildForm method, after the line **.Field(nameof(TechnicianId))**:
 
+* Ask the machine id:
+```csharp
+.Field(nameof(MachineId))
+```
 
+* Ask the machine type:
+```csharp
+.Field(nameof(MachineType))
+```
+
+* Ask to check the first checkpoint:
+```csharp
+.Field(nameof(FirstCheckpoint),
+    validate: async (state, value) =>
+    {
+        return CheckpointVerificationProcess(state, value);
+    })
+```
+
+* Ask to check the second checkpoint:
+```csharp
+.Field(nameof(SecondCheckpoint),
+    validate: async (state, value) =>
+    {
+        return CheckpointVerificationProcess(state, value);
+    })
+```
+
+* Ask to check the third checkpoint:
+```csharp
+.Field(nameof(ThirdCheckpoint),
+    validate: async (state, value) =>
+    {
+        return CheckpointVerificationProcess(state, value);
+    })
+```
+
+* Ask the user to specify other remarks about machine health if necessary:
+```csharp
+.Field(nameof(OtherRemarks))
+```
+
+* Ask if the problem is solved:
+```csharp
+.Confirm(async (state) =>
+    {
+        var customMessage = "Problem solved, is it ok?";
+        return new PromptAttribute(customMessage);
+    })
+```
+
+* Add this code to handle the choice **"Skip this step"** otherwise it will not be recognized by the bot:
+```csharp
+var formBuilder = new FormBuilder<Checklist>();
+var noPreferenceTerms = formBuilder.Configuration.NoPreference.ToList();
+noPreferenceTerms.Add("Skip this step");
+formBuilder.Configuration.NoPreference = noPreferenceTerms.ToArray();
+```
+
+* And finally, add this method outside the Buildform method:
+```csharp
+protected static ValidateResult CheckpointVerificationProcess(Checklist state, object value)
+{
+    string response = "Thanks for your check.";
+    var result = new ValidateResult { IsValid = true, Value = value };
+
+    if (value != null)
+    {
+        if (!string.IsNullOrEmpty(value.ToString()))
+        {
+            if (value.ToString() == CheckpointVerificationOptions.KO.ToString())
+            {
+                result.IsValid = false;
+                result.Feedback = string.Concat(response, " Please fix the problem by running procedure for first checkpoint and perform a check again");
+            }
+            else
+            {
+                result.Feedback = string.Concat(response, " next step...");
+            }
+        }
+    }
+
+    return result;
+}
+```
+
+* Thank the user for his intervention:
+```csharp
+.Message("Thank you");
+```
+
+Compile, run and test the bot with the emulator!
+
+Here is the result you should get:
 
 ## Congratulations you finished this part !
 
