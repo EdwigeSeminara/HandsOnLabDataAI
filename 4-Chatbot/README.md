@@ -15,7 +15,6 @@ For this part you will need:
 
 ## Retrieve, open and run the solution
 
-
 To get started, make sure that the initial solution is properly launched in your environment. For it :
 
 1. Open the **HolDataAI.Application.sln** solution
@@ -24,17 +23,11 @@ To get started, make sure that the initial solution is properly launched in your
 ![localhosturl](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/localhosturl.PNG)
 
 4. To interact with the bot we need an emulator. Launch Bot Framework Channel Emulator (if you have not installed it, download it **[here](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.35)** and install it)
-
 5. In the "Bot Url" field, write the port that you noted in step 3
-
 6. Do not change the other fields
-
 7. In the text box at the bottom of the emulator, enter **hello**
-
 8. Your **hello** appears in the chat area
-
 9. The bot answers by welcoming you and asking for your technician id
-
 10. Enter your technician id. The bot displays the message **Thank you! Checklist verified.** :
 ![debugresult](https://github.com/EdwigeSeminara/HandsOnLabDataAI/blob/master/4-Chatbot/README_files/debugresult.png)
 
@@ -53,11 +46,26 @@ All of our changes will be made in the Checklist.cs file, open this file. Note t
 You can notice:
 
 * the presence of the property:
-```chsarp
+```csharp
+public string TechnicianId { get; set; }
+```
+* the form builder : 
+```csharp
 public string TechnicianId { get; set; }
 ```
 
+What you need to understand:
+
+* each question asked by the bot will be defined by a property similar to the TechnicianId property
+* in the case of a multiple-choice question, choices offered to the user are defined by an enum
+* the "loop" of the form is simply defined in a chained way
+
+Now let's go!
+
 ### Add enums
+
+```csharp
+```
 
 ### Add properties
 
