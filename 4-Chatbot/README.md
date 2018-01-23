@@ -260,6 +260,19 @@ Here is the result you should get:
 
 ## Congratulations you finished this part !
 
-## To continue further
+## To go further
+
+After completing this part you can go further and perform this points:
+* Add Cortana skills
+* Deploy your bot to the cloud
+* Register your bot with Bot Service
+* Use it in a cross-platform app thanks to DirectLine 3.0
+
+Feel free to customize it by yourself !
 
 ## Documentation
+* **[Bot Service documenation](https://docs.microsoft.com/en-us/bot-framework/)**
+* **[Bot Builder for .NET](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-quickstart)**
+* **[Bot Framework source code](https://github.com/Microsoft/BotFramework-Emulator)**
+* **[Register a bot with Bot Service](https://docs.microsoft.com/en-us/Bot-Framework/bot-service-quickstart-registration)**
+* **[Connect a bot to Direct Line](https://docs.microsoft.com/en-us/bot-framework/bot-service-channel-connect-directline)**
