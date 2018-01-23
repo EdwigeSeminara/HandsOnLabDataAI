@@ -21,13 +21,41 @@ To get started, make sure that the initial solution is properly launched in your
 1. Open the **HolDataAI.Application.sln** solution
 2. Run the project
 3. An internet page is launched in your browser, note the port indicated in the url:
+![localhosturl](README_files/localhosturl.png)
 
+4. To interact with the bot we need an emulator. Launch Bot Framework Channel Emulator (if you have not installed it, download it **[here](https://github.com/Microsoft/BotFramework-Emulator/releases/tag/v3.5.35)** and install it)
 
-4. 
+5. In the "Bot Url" field, write the port that you noted in step 3
+
+6. Do not change the other fields
+
+7. In the text box at the bottom of the emulator, enter **hello**
+
+8. Your **hello** appears in the chat area
+
+9. The bot answers by welcoming you and asking for your technician id
+
+10. Enter your technician id. The bot displays the message **Thank you! Checklist verified.** :
+![debugresult](README_files/debugresult.png)
+
+We will complete the code to build the requested scenario.
 
 ## Create a bot
 
+Our goal is to code a bot to roll out a checklist, with differente steps.
+
+Add the necessary to extend the functionality of this bot to the scenario below:
+
 ### Discover the source code
+
+All of our changes will be made in the Checklist.cs file, open this file. Note the presence of the Checklist class.
+
+You can notice:
+
+* the presence of the property:
+```chsarp
+public string TechnicianId { get; set; }
+```
 
 ### Add enums
 
@@ -39,4 +67,4 @@ To get started, make sure that the initial solution is properly launched in your
 
 ## To continue further
 
-## Documentations
+## Documentation
